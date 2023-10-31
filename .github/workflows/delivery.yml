@@ -32,11 +32,6 @@ jobs:
           platforms: linux/amd64,linux/arm64
 
       - name: Build docker image  # create docker images with diff arh: amd / arm and save as images using --load
-        run: |
-          docker buildx build --platform linux/amd64 -t ui:$TAG_AMD64 . --load
-          docker buildx build --platform linux/arm64 -t ui/:$TAG_ARM64 . --load
-
-      - name: Build docker image  # create docker images with diff arh: amd / arm and save as images using --load
         env:
             REGISTRY: api
         run: |
