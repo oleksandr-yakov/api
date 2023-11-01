@@ -18,7 +18,7 @@ on:
 env:
   TAG_ARM64: arm64
   TAG_AMD64: amd64
-  VERSION: ${{ github.event.inputs.tag_name }}
+  VERSION: ${{ github.event.inputs.tag_name || 'latest' }}
 
 jobs:
   delivery:
